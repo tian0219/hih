@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe4e1;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #ff69b4;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                background-color: #ff1493;
+            }
+
+        .hidden {
+            display: none;
+        }
+
+        #love-button {
+            margin-top: 20px;
+        }
+
+        #letter {
+            display: none;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+            white-space: pre-wrap;
+            background: #fff;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday! 🎉</h1>
+    <button id="love-button">I love u ❤️</button>
+
+    <video id="birthday-video" class="hidden" width="600" controls>
+        <source src="视频/生日祝福.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="letter" class="hidden">
+        亲爱的黄志豪：
+        <br><br>
+        你好！
+        <br><br>
+        这封信是我早就准备写下给你的，我想这封信大概会在第一个有我陪你的生日由我亲手递给你。在刚知道你的生日的时候，我就已经开始想象要送你一份什么样的生日礼物才好。
+        <br><br>
+        ……【此处省略部分内容，展示你全文中的主要部分】……
+        <br><br>
+        我愿意用我的一生去回答一句“我爱你”
+        <br><br>
+        祝你
+        生日快乐，身体健康，
+        <br><br>
+        你的爱人：何湉田
+        2024/12/28
+    </div>
+
+    <script>
+        const loveButton = document.getElementById('love-button');
+        const video = document.getElementById('birthday-video');
+        const letter = document.getElementById('letter');
+
+        loveButton.addEventListener('click', () => {
+            loveButton.classList.add('hidden'); // 隐藏"Love"按钮
+            video.classList.remove('hidden'); // 显示视频
+            video.play(); // 播放视频
+
+            video.addEventListener('ended', () => {
+                video.classList.add('hidden'); // 视频播放结束后隐藏视频
+                letter.classList.remove('hidden'); // 显示信件
+            });
+        });
+    </script>
+
+</body>
+</html>
